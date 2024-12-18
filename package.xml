@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>robot4ws_perception</name>
+  <version>0.0.0</version>
+  <description>The robot4ws_perception package</description>
+
+
+  <author email="davidepanarella.ts@gmail.com">Davide Panarella</author>
+  <author email="simone.cottiga@phd.units.it">Simone Cottiga</author>
+  <author email="khalid.bourr@unicam.it">Khalid Bourr</author>
+
+
+  <maintainer email="davidepanarella.ts@gmail.com">Davide Panarella</maintainer>
+  <maintainer email="simone.cottiga@phd.units.it">Simone Cottiga</maintainer>
+  <maintainer email="khalid.bourr@unicam.it">Khalid Bourr</maintainer>
+
+  <license>TODO</license>
+
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>cv_bridge</build_depend>
+  <build_depend>grid_map_ros</build_depend>
+  <build_depend>image_transport</build_depend>
+  <build_depend>rospy</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+  <build_export_depend>cv_bridge</build_export_depend>
+  <build_export_depend>grid_map_ros</build_export_depend>
+  <build_export_depend>image_transport</build_export_depend>
+  <build_export_depend>rospy</build_export_depend>
+  <build_export_depend>sensor_msgs</build_export_depend>
+  <exec_depend>cv_bridge</exec_depend>
+  <exec_depend>grid_map_ros</exec_depend>
+  <exec_depend>image_transport</exec_depend>
+  <exec_depend>rospy</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+
+
+  <!-- The export tag contains other, unspecified, tags -->
+  <export>
+    <!-- Other tools can request additional information be placed here -->
+
+  </export>
+</package>

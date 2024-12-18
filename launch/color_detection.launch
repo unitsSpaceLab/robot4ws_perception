@@ -1,0 +1,14 @@
+<launch>
+    <!-- Define the debug argument with a default value -->
+    <arg name="debug" default="true"/>
+
+    <!-- Load parameters -->
+    <rosparam command="load" file="$(find robot4ws_perception)/config/color_detection_params.yaml" />
+
+    <!-- Start color detection node -->
+    <node name="color_detector" pkg="robot4ws_perception" type="color_detector_node.py" output="screen">
+    </node>
+
+    <!-- Debug visualization -->
+    <node pkg="rqt_image_view" type="rqt_image_view" name="debug_image_view" if="$(arg debug)"/>
+</launch>

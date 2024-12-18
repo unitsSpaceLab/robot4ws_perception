@@ -1,0 +1,41 @@
+# Camera topic configuration
+camera_topics:
+  color: /Archimede/d435i_camera/color/image_raw
+  camera_info: /Archimede/d435i_camera/color/camera_info
+
+# Color detection parameters
+colors:
+  red:
+    hsv_lower: [0, 100, 100]    
+    hsv_upper: [10, 255, 255]
+    name: "red"
+  blue:
+    hsv_lower: [100, 100, 100]  
+    hsv_upper: [130, 255, 255]
+    name: "blue"
+  green:
+    hsv_lower: [40, 100, 100]   
+    hsv_upper: [80, 255, 255]
+    name: "green"
+  yellow:
+    hsv_lower: [20, 100, 100]   
+    hsv_upper: [40, 255, 255]
+    name: "yellow"
+  orange:
+    name: "orange"
+    hsv_lower: [10, 150, 50]
+    hsv_upper: [20, 255, 255]
+  purple:
+    name: "purple"
+    hsv_lower: [140, 100, 50]
+    hsv_upper: [160, 255, 255]
+  cyan:
+    name: "cyan"
+    hsv_lower: [85, 100, 50]
+    hsv_upper: [95, 255, 255]
+
+processing:
+  min_contour_area: 100    # minimum area of color blob to detect (pixels)
+  blur_kernel_size: 5      # Gaussian blur kernel size
+  morph_kernel_size: 3     # morphological operations kernel size
+  debug_visualization: true # publish debug visualization messages
