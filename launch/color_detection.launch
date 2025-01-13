@@ -6,9 +6,24 @@
     <rosparam command="load" file="$(find robot4ws_perception)/config/color_detection_params.yaml" />
 
     <!-- Start color detection node -->
-    <node name="color_detector" pkg="robot4ws_perception" type="color_detector_node.py" output="screen">
+    <node name="enhanced_color_detector" pkg="robot4ws_perception" type="color_detector_node.py" output="screen">
+        <remap from="image" to="/Archimede/d435i_camera/color/image_raw"/>
+        <remap from="camera_info" to="/Archimede/d435i_camera/color/camera_info"/>
     </node>
 
-    <!-- Debug visualization -->
-    <node pkg="rqt_image_view" type="rqt_image_view" name="debug_image_view" if="$(arg debug)"/>
+
+    <!-- Start depth processing node 
+    <node name="depth_processor" pkg="robot4ws_perception" type="depth_processing_node.py" output="screen">
+        <remap from="depth" to="/Archimede/d435i_camera/depth/image_raw"/>
+        <remap from="camera_info" to="/Archimede/d435i_camera/depth/camera_info"/> -->
+        
+        <!-- Parameters specific to depth processing 
+        <param name="min_depth" value="0.3"/>   
+        <param name="max_depth" value="3.0"/>   
+        <param name="frame_id" value="Archimede_foot_start"/>
+    </node> -->
+    
+
+    <!-- Debug visualization 
+    <node pkg="rqt_image_view" type="rqt_image_view" name="debug_image_view" if="$(arg debug)"/>-->
 </launch>

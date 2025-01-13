@@ -13,6 +13,9 @@ find_package(catkin REQUIRED COMPONENTS
   image_transport
   rospy
   sensor_msgs
+  robot4ws_msgs
+  vision_msgs
+  nav_msgs
 )
 
 ## System dependencies are found with CMake's conventions
@@ -104,12 +107,15 @@ find_package(catkin REQUIRED COMPONENTS
 ## LIBRARIES: libraries you create in this project that dependent projects also need
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
-catkin_package(
+# catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES robot4ws_perception
 #  CATKIN_DEPENDS cv_bridge grid_map_ros image_transport rospy sensor_msgs
 #  DEPENDS system_lib
-)
+# )
+# catkin_package(
+#   CATKIN_DEPENDS vision_msgs
+# )
 
 ###########
 ## Build ##
