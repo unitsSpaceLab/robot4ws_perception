@@ -154,15 +154,15 @@ class ColorDepthDetector(object):
                 header.stamp,
                 rospy.Duration(0.1)
             )
-            
+
             pose_stamped = PoseStamped()
             pose_stamped.header = header
             pose_stamped.pose.position = point
             pose_stamped.pose.orientation = Quaternion(0, 0, 0, 1)
-            
+
             transformed_pose = tf2_geometry_msgs.do_transform_pose(pose_stamped, transform)
             return transformed_pose.pose.position, transform.transform.rotation
-            
+
         except (tf2_ros.LookupException, tf2_ros.ConnectivityException, 
                 tf2_ros.ExtrapolationException) as e:
             rospy.logwarn("Transform failed: {0}".format(e))
